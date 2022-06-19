@@ -6,7 +6,7 @@ package horse.algorithm.bs;
 public class BinarySearchVariant {
 
     /**
-     * 查找最后一个值等于给定值的元素
+     * 变体2：查找最后一个值等于给定值的元素
      *
      * @param nums
      * @param n
@@ -36,7 +36,7 @@ public class BinarySearchVariant {
 
 
     /**
-     * 查找第一个值大于或等于给定值的元素
+     * 变体3：查找第一个值大于或等于给定值的元素
      *
      * @param nums
      * @param n
@@ -64,6 +64,36 @@ public class BinarySearchVariant {
     }
 
 
+    /**
+     * 变体4：查找最后一个值小于或者等于给定值的元素
+     *
+     * @param nums
+     * @param n
+     * @param value
+     * @return
+     */
+    public static int bsearch4(int[] nums, int n, int value) {
+
+        int low = 0;
+        int high = n - 1;
+
+        while (low <= high) {
+            int mid = low + ((high - low) >> 1);
+            if (nums[mid] > value) {
+                high = mid - 1;
+            } else {
+                if ((mid == n - 1) || (nums[mid + 1] > value)) {
+                    return mid;
+                } else {
+                    low = mid + 1;
+                }
+
+            }
+        }
+        return -1;
+    }
+
+
     public static void main(String[] args) {
         int[] nums = new int[]{3, 4, 5, 5, 6, 7, 10};
 
@@ -77,5 +107,11 @@ public class BinarySearchVariant {
          * 查找第一个值大于或等于给定值的元素
          */
         System.out.println(bsearch3(nums, nums.length, 5));
+
+
+        /**
+         * 变体4：查找最后一个值小于或者等于给定值的元素
+         */
+        System.out.println(bsearch4(nums, nums.length, 8));
     }
 }
