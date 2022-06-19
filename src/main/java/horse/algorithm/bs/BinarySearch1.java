@@ -11,12 +11,12 @@ public class BinarySearch1 {
      * @return
      */
     static int binarySearch(int[] arr, int key) {
-        int formIndex = 0;
+        int low = 0;
         int high = arr.length - 1;
-        while (formIndex <= high) {
-            int mid = (formIndex + high) / 2;
+        while (low <= high) {
+            int mid = (low + ((high - low) >> 1));
             if (key > arr[mid]) {
-                formIndex = mid + 1;
+                low = mid + 1;
             } else if (key < arr[mid]) {
                 high = mid - 1;
             } else {
@@ -25,7 +25,7 @@ public class BinarySearch1 {
         }
 //        return -1;
 
-        return -(formIndex + 1); //java实现，返回待插入下标位置
+        return -(low + 1); //java实现，返回待插入下标位置
     }
 
 

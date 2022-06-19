@@ -13,24 +13,24 @@ public class SelectionSortSolution {
         int[] nums = new int[6];
         int n = 6;
 
-        nums[0] = 4;
-        nums[1] = 5;
-        nums[2] = 6;
-        nums[3] = 3;
-        nums[3] = 2;
-        nums[4] = 2;
-        nums[5] = 1;
+//        nums[0] = 4;
+//        nums[1] = 5;
+//        nums[2] = 6;
+//        nums[3] = 3;
+//        nums[3] = 2;
+//        nums[4] = 2;
+//        nums[5] = 1;
 
 
         /**
          * 最坏的情况
          */
-//        nums[0] = 6;
-//        nums[1] = 5;
-//        nums[2] = 4;
-//        nums[3] = 3;
-//        nums[4] = 2;
-//        nums[5] = 1;
+        nums[0] = 6;
+        nums[1] = 5;
+        nums[2] = 4;
+        nums[3] = 3;
+        nums[4] = 2;
+        nums[5] = 1;
 
         System.out.println("排序前：" + Arrays.toString(nums));
         selectionSort(nums, n);
@@ -51,9 +51,9 @@ public class SelectionSortSolution {
         }
         for (int i = 0; i < n - 1; i++) {
             int minPos = i;// 记录最小的位置下标
-            for (int j = i; j < n; j++) {
+            for (int j = i + 1; j < n; j++) {
                 /**
-                 * 比较知道最小的数
+                 * 比较找到最小的数
                  */
                 if (nums[j] < nums[minPos]) {
                     minPos = j;
