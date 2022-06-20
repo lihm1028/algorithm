@@ -76,7 +76,6 @@ public class BinarySearchVariant {
 
         int low = 0;
         int high = n - 1;
-
         while (low <= high) {
             int mid = low + ((high - low) >> 1);
             if (nums[mid] > value) {
