@@ -22,13 +22,19 @@ import java.util.List;
 public class ThreeSumSolution {
 
     public static List<List<Integer>> threeSum(int[] nums) {
+
+        if (nums.length < 3) {
+            return new ArrayList<>();
+        }
         /**
          * 存放符合条件的集合
          */
         List<List<Integer>> res = new ArrayList<>();
         Arrays.sort(nums);
-
-        for (int i = 0; i < nums.length; i++) {
+        /**
+         * 如果移动到最后2位就不需要循环了
+         */
+        for (int i = 0; i < nums.length - 2; i++) {
 
             /**
              * 排过序的，如果原始大于0，后面都大于0不符合了，终止退出
@@ -73,8 +79,6 @@ public class ThreeSumSolution {
             }
 
         }
-
-
         return res;
     }
 
