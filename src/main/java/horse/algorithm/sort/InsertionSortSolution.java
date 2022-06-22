@@ -101,7 +101,7 @@ public class InsertionSortSolution {
              *
              */
             nums[j + 1] = key;
-
+            System.out.println("排序：" + Arrays.toString(nums));
 
         }
 
