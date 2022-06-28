@@ -1,6 +1,5 @@
 package horse.algorithm.algs4;
 
-import edu.princeton.cs.algs4.BinaryStdOut;
 
 import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
@@ -112,7 +111,7 @@ public class StdOut {
     /**
      * Prints a byte to standard output and then terminates the line.
      * <p>
-     * To write binary data, see {@link BinaryStdOut}.
+     * To write binary data, see
      *
      * @param x the byte to print
      */
@@ -242,17 +241,4 @@ public class StdOut {
         out.flush();
     }
 
-    /**
-     * Unit tests some of the methods in {@code StdOut}.
-     *
-     * @param args the command-line arguments
-     */
-    public static void main(String[] args) {
-
-        // write to stdout
-        edu.princeton.cs.algs4.StdOut.println("Test");
-        edu.princeton.cs.algs4.StdOut.println(17);
-        edu.princeton.cs.algs4.StdOut.println(true);
-        edu.princeton.cs.algs4.StdOut.printf("%.6f\n", 1.0 / 7.0);
-    }
 }
