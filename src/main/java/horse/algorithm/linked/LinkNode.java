@@ -21,11 +21,48 @@ public class LinkNode<E> {
 
     }
 
-    protected void addLast(E data) {
+
+    /**
+     * 将新元素添加到链表链表头部
+     *
+     * @param data
+     */
+    protected void addFirst(E data) {
+
+
+        /**
+         * 1.先构建新节点
+         * 2.判断head节点是不是null，如果空链表，将新节点设置为head。
+         * 否则：先将head.next赋值给current.next,再将current设置为head节点
+         *
+         */
+        Node current = new Node(data, null);
         if (head == null) {
-            head = new Node(data, null);
+            head = current;
+            return;
         }
-        head.next = new Node(data, null);
+        current.next = head.next;
+        head = current;
+
+    }
+
+    protected void addLast(E data) {
+        Node current = new Node(data, null);
+        if (head == null) {
+            head = current;
+            return;
+        }
+
+        if (head.next == null) {
+            head.next = current;
+            return;
+        }
+        Node<E> next = head.next;
+        while (next != null && next.next != null) {
+            next = next.next;
+        }
+        next.next = current;
+
     }
 
     public static class Node<E> {
