@@ -7,6 +7,13 @@
     <groupId>horse</groupId>
     <artifactId>algorithm</artifactId>
     <version>1.5.22-SNAPSHOT</version>
+
+    <properties>
+       <java.version>1.8</java.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>${java.version}</maven.compiler.source>
+        <maven.compiler.target>${java.version}</maven.compiler.target>
+    </properties>
     <build>
         <plugins>
             <plugin>

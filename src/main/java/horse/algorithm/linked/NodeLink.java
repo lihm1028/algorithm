@@ -88,18 +88,31 @@ public class NodeLink {
 
     }
 
-
+    /**
+     * 4,3,2,5
+     *
+     * 3,4
+     * 2,3,4
+     * 5,2,3,4
+     *
+     *
+     */
     public void reverseNode2() {
         final Node reverse = reverse(null, head);
         head = reverse;
     }
 
     public Node reverse(Node prev, Node current) {
+        // 如果当前节点已经是最后一个了，那么最后一个了就返回上一个节点
         if (current == null) {
             return prev;
         }
+        //3
         Node temp = current.next;
+        //上一个节点
         current.next = prev;
+
+        // 下一次递归，
         prev = current;
         current = temp;
         return reverse(prev, current);
