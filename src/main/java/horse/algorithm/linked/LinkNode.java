@@ -8,9 +8,14 @@ public class LinkNode<E> {
 
     public static void main(String[] args) {
         LinkNode<String> linked = new LinkNode<>();
-        linked.addLast("a");
-        linked.addLast("b");
-        linked.addLast("c");
+//        linked.addLast("a");
+//        linked.addLast("b");
+//        linked.addLast("c");
+
+
+        linked.addLast2("a");
+        linked.addLast2("b");
+        linked.addLast2("c");
 
         Node<String> next = linked.head;
         while (next != null) {
@@ -22,14 +27,21 @@ public class LinkNode<E> {
     }
 
 
+    private void addLast2(E data) {
+        Node<E> node = new Node(data, null);
+        if (head == null) {
+            head = node;
+        } else {
+            head.addNode(node);
+        }
+    }
+
     /**
      * 将新元素添加到链表链表头部
      *
      * @param data
      */
     protected void addFirst(E data) {
-
-
         /**
          * 1.先构建新节点
          * 2.判断head节点是不是null，如果空链表，将新节点设置为head。
@@ -71,9 +83,18 @@ public class LinkNode<E> {
 
         private Node<E> next;
 
+
         public Node(E data, Node<E> next) {
             this.data = data;
             this.next = next;
+        }
+
+        public void addNode(Node<E> node) {
+            if (this.next == null) {
+                this.next = node;
+            } else {
+                this.next.addNode(node);
+            }
         }
 
         public E getData() {
