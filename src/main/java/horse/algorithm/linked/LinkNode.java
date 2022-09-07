@@ -13,9 +13,12 @@ public class LinkNode<E> {
 //        linked.addLast("c");
 
 
-        linked.addLast2("a");
-        linked.addLast2("b");
-        linked.addLast2("c");
+        linked.addLast2("1");
+        linked.addLast2("2");
+        linked.addLast2("3");
+        linked.addLast2("4");
+
+        linked.reverseAll();
 
         Node<String> next = linked.head;
         while (next != null) {
@@ -35,6 +38,26 @@ public class LinkNode<E> {
             head.addNode(node);
         }
     }
+
+    private void reverseAll() {
+        Node<E> node = reverse(null, head);
+        head = node;
+    }
+
+
+    private Node<E> reverse(Node<E> prev, Node<E> current) {
+        if (current == null) {
+            return prev;
+        }
+        Node<E> temp = current.next;
+        current.next = prev;
+
+        // 下一次递归
+        prev = current;
+        current = temp;
+        return reverse(prev, current);
+    }
+
 
     /**
      * 将新元素添加到链表链表头部
