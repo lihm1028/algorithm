@@ -26,6 +26,7 @@ public class LinkNode<E> {
             next = next.next;
 
         }
+        System.out.println("args = [" + args + "]");
 
     }
 
