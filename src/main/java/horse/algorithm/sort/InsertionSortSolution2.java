@@ -6,15 +6,16 @@ public class InsertionSortSolution2 {
 
 
     public static void insertionSort(int[] nums, int n) {
-        for (int i = 1; i < n; i++) {
-            int base = nums[i];
-            //初始化j=i-1，也就是最多比较i次
-            int j = i - 1;
-            while (j >= 0 && nums[j] > base) {
-                nums[j + 1] = nums[j];
+        for (int i = 1; i <n ; i++) {
+            int base=nums[i];
+            int j=i-1;
+            while (j>=0&& nums[j]>base){
+                nums[j+1]=nums[j];
                 j--;
             }
-            nums[j + 1] = base;
+
+            nums[j+1]=base;
+            System.out.println(Arrays.toString(nums)+",base="+base);
         }
     }
 
