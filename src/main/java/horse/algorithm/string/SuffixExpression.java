@@ -21,7 +21,6 @@ public class SuffixExpression {
     // ab+c*d-
     //-->(((a+b)*c)-d) --> ab+c*d-
 
-
     /**
      * 后缀表达式转换中缀表达式 规则：
      * 1.对标中缀转后缀，也就是把符号提到括号前面即可。
